@@ -8,7 +8,7 @@ typedef struct { /*学生信息结构*/
 	float Score;	   /*学生成绩*/
 }STUDENTINFO;
 
-void Structural(char TempName[][NEXT], float TempScore[], int Num)
+void Structural(char TempName[][NEXT], float TempScore[], int Num)/*使用结构体查询学生最高(低)成绩*/
 {
 	int i;		/*计数器*/
 	int Max;	/*最高成绩下标*/

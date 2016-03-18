@@ -1,8 +1,10 @@
+
 #include "stdio.h"
 #include "windows.h"
 
 #include "Array.h"
 #include "Structural.h"
+#include "LinkedList.h"
 
 #define N 10	/*学生个数,定义个数多于学生数据会出错,修改后对应头文件的宏定义也要修改*/
 #define NEXT 10 /*姓名长度(Name Extent)*/
@@ -11,7 +13,7 @@ void InputData(char TempName[N][NEXT], float TempScore[N],int *Num);
 void Memu(char TempName[N][NEXT], float TempScore[N],int Num);
 
 int main(void)
-{
+
 	char Name[N][NEXT];		 /*学生姓名*/
 	float Score[N];			 /*学生成绩*/
 	int Num;				 /*学生个数*/
@@ -66,7 +68,7 @@ void Memu(char TempName[N][NEXT], float TempScore[N],int Num)
 		getch();
 		Memu(TempName,TempScore,Num);
 	case 3 :
-		//LinkedList(TempName, TempScore,Num);
+		LinkedList(LinkedList_Initialize(TempName, TempScore,Num),Num);
 		getch();
 		Memu(TempName,TempScore,Num);
 	case 4 :
