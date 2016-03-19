@@ -1,4 +1,3 @@
-
 #include "stdio.h"
 #include "windows.h"
 
@@ -8,25 +7,6 @@
 
 #define N 10	/*学生个数,定义个数多于学生数据会出错,修改后对应头文件的宏定义也要修改*/
 #define NEXT 10 /*姓名长度(Name Extent)*/
-
-void InputData(char TempName[N][NEXT], float TempScore[N],int *Num);
-void Memu(char TempName[N][NEXT], float TempScore[N],int Num);
-
-int main(void)
-
-	char Name[N][NEXT];		 /*学生姓名*/
-	float Score[N];			 /*学生成绩*/
-	int Num;				 /*学生个数*/
-
-	printf("\n  *请输入学生总数(小于%d):", N);
-	scanf("%d", &Num);
-	system("cls");
-	
-	InputData(Name,Score,Num);	 /*输入学生信息*/
-	Memu(Name,Score,Num);		 /*使用菜单选择操作*/
-
-	return 0;
-}
 
 void InputData(char TempName[N][NEXT], float TempScore[N], int Num)
 {
@@ -78,4 +58,20 @@ void Memu(char TempName[N][NEXT], float TempScore[N],int Num)
 		getch();
 		Memu(TempName, TempScore,Num);
 	}
+}
+
+int main(void)
+{
+	char Name[N][NEXT];		 /*学生姓名*/
+	float Score[N];			 /*学生成绩*/
+	int Num;				 /*学生个数*/
+
+	printf("\n  *请输入学生总数(小于%d):", N);
+	scanf("%d", &Num);
+	system("cls");
+
+	InputData(Name, Score, Num);	 /*输入学生信息*/
+	Memu(Name, Score, Num);		 /*使用菜单选择操作*/
+
+	return 0;
 }

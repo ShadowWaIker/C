@@ -10,16 +10,6 @@ typedef struct Node
 	struct Node *Next;
 } NODE;
 
-void LinkedList(NODE *Head,int Num)/*使用链表查询学生最高(低)成绩*/
-{
-	NODE *Max;	/*最高成绩下标*/
-	NODE *Min;	/*最低成绩下标*/
-	Max = LinkedList_Search_Max(Head,Num);
-	Min = LinkedList_Search_Min(Head,Num);
-	printf("成绩最高的同学的姓名是:%s(%f分)\n", Max->Name, Max->Score);
-	printf("成绩最低的同学的姓名是:%s(%f分)\n", Min->Name, Min->Score);
-}
-
 NODE *LinkedList_Initialize(char TempName[][NEXT],float TempScore[],int Num)/*初始化学生信息链表*/
 {
 	int i; /*计数器*/
@@ -41,44 +31,43 @@ NODE *LinkedList_Initialize(char TempName[][NEXT],float TempScore[],int Num)/*初
 	return Head;
 }
 
-NODE *LinkedList_Search_Max(NODE *Head, int Num) /*寻找成绩最高的学生并返回学生下标*/
+NODE *LinkedList_Search_Max(NODE *Head,int Num) /*寻找成绩最高的学生并返回学生下标*/
 {
-	int i;/*计数器*/
-	float Value; /*储存找到的数据*/
-	NODE *Flag;
+	int i;
+	NODE *Flag; /*储存找到的数据*/
 
-	Value = Head->Score;
 	Flag = Head;
 
 	for (i = 0;i<Num;i++)
 	{
-		if (Head->Score > Value)/*如果当前结点数据大于Value就把当前结点的数据赋给Value*/
-		{
-			Value = Head->Score;
+		if (Head->Score > Flag->Score)/*如果当前结点数据大于Value就把当前结点的数据赋给Value*/
 			Flag = Head;
-		}
 		Head = Head->Next;/*将结点指针指向下一个结点*/
 	}
 	return Flag;
 } 
 
-NODE *LinkedList_Search_Min(NODE *Head, int Num) /*寻找成绩最低的学生并返回学生下标*/
+NODE *LinkedList_Search_Min(NODE *Head) /*寻找成绩最低的学生并返回学生下标*/
 {
-	int i;/*计数器*/
-	float Value; /*储存找到的数据*/
-	NODE *Flag;
+	NODE *Flag; /*储存找到的数据*/
 
-	Value = Head->Score;
 	Flag = Head;
 
-	for (i = 0;i<Num;i++)
+	for (;Head->Next != NULL;)
 	{
-		if (Head->Score > Value)/*如果当前结点数据大于Value就把当前结点的数据赋给Value*/
-		{
-			Value = Head->Score;
+		if (Head->Score < Flag->Score)/*如果当前结点数据大于Value就把当前结点的数据赋给Value*/
 			Flag = Head;
-		}
 		Head = Head->Next;/*将结点指针指向下一个结点*/
 	}
 	return Flag;
+}
+
+void LinkedList(NODE *Head, int Num)/*使用链表查询学生最高(低)成绩*/
+{
+	NODE *Max;	/*最高成绩下标*/
+	NODE *Min;	/*最低成绩下标*/
+	Max = LinkedList_Search_Max(Head,Num);
+//	Min = LinkedList_Search_Min(Head);
+	printf("成绩最高的同学的姓名是:%s(%f分)\n", Max->Name, Max->Score);
+//	printf("成绩最低的同学的姓名是:%s(%f分)\n", Min->Name, Min->Score);
 }
