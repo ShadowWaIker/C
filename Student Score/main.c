@@ -8,7 +8,7 @@
 #define N 10	/*学生个数,定义个数多于学生数据会出错,修改后对应头文件的宏定义也要修改*/
 #define NEXT 10 /*姓名长度(Name Extent)*/
 
-void InputData(char TempName[N][NEXT], float TempScore[N], int Num)
+void InputData(char TempName[N][NEXT], float TempScore[N], int Num) /*输入学生信息*/
 {
 	int i;		/*计数器*/
 	printf("\n");
@@ -23,7 +23,7 @@ void InputData(char TempName[N][NEXT], float TempScore[N], int Num)
 	getch();
 }
 
-void Memu(char TempName[N][NEXT], float TempScore[N],int Num)
+void Memu(char TempName[N][NEXT], float TempScore[N],int Num)		/*显示菜单*/
 {
 	int i;				/*存放操作数*/
 
@@ -62,7 +62,7 @@ void Memu(char TempName[N][NEXT], float TempScore[N],int Num)
 	}
 }
 
-int main(void)
+int main(void)				 /*主程序*/
 {
 	char Name[N][NEXT];		 /*学生姓名*/
 	float Score[N];			 /*学生成绩*/

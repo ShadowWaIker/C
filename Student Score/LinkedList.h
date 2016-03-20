@@ -62,7 +62,7 @@ NODE *LinkedList_Search_Min(NODE *Head) /*寻找成绩最低的学生并返回学生下标*/
 	return Flag;
 }
 
-void LinkedList(NODE *Head)/*使用链表查询学生最高(低)成绩*/
+void LinkedList(NODE *Head) /*主模块，使用链表查询学生最高(低)成绩*/
 {
 	NODE *Max;	/*最高成绩下标*/
 	NODE *Min;	/*最低成绩下标*/

@@ -33,7 +33,7 @@ int Array_Search_Min(float SearchScore[], int Num) /*Ñ°ÕÒ³É¼¨×îµÍµÄÑ§Éú²¢·µ»ØÑ§É
 	return Flag;
 }
 
-void Array(char TempName[][NEXT], float TempScore[], int Num) /*Ê¹ÓÃÊı×é²éÑ¯Ñ§Éú×î¸ß(µÍ)³É¼¨*/
+void Array(char TempName[][NEXT], float TempScore[], int Num) /*Ö÷Ä£¿é£¬Ê¹ÓÃÊı×é²éÑ¯Ñ§Éú×î¸ß(µÍ)³É¼¨*/
 {
 	int Max;	/*×î¸ß³É¼¨ÏÂ±ê*/
 	int Min;	/*×îµÍ³É¼¨ÏÂ±ê*/

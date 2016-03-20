@@ -40,7 +40,7 @@ int Structural_Search_Min(STUDENTINFO TempStudent[], int Num) /*寻找成绩最低的学
 	return Flag;
 }
 
-void Structural(char TempName[][NEXT], float TempScore[], int Num)/*使用结构体查询学生最高(低)成绩*/
+void Structural(char TempName[][NEXT], float TempScore[], int Num)/*主模块，使用结构体查询学生最高(低)成绩*/
 {
 	int i;		/*计数器*/
 	int Max;	/*最高成绩下标*/
