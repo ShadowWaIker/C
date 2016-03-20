@@ -56,6 +56,6 @@ void Structural(char TempName[][NEXT], float TempScore[], int Num)/*使用结构体查
 
 	Max = Structural_Search_Max(Student, Num);
 	Min = Structural_Search_Min(Student, Num);
-	printf("成绩最高的同学的姓名是:%s(%f分)\n", Student[Max].Name, Student[Max].Score);
-	printf("成绩最低的同学的姓名是:%s(%f分)\n", Student[Min].Name, Student[Min].Score);
+	printf("\n\t成绩最高的同学的姓名是:%s(%f分)\n", Student[Max].Name, Student[Max].Score);
+	printf("\n\t成绩最低的同学的姓名是:%s(%f分)\n", Student[Min].Name, Student[Min].Score);
 }

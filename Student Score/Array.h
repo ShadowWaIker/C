@@ -39,6 +39,6 @@ void Array(char TempName[][NEXT], float TempScore[], int Num) /*使用数组查询学生
 	int Min;	/*最低成绩下标*/
 	Max = Array_Search_Max(TempScore, Num);
 	Min = Array_Search_Min(TempScore, Num);
-	printf("成绩最高的同学的姓名是:%s(%f分)\n", TempName[Max], TempScore[Max]);
-	printf("成绩最低的同学的姓名是:%s(%f分)\n", TempName[Min], TempScore[Min]);
+	printf("\n\t成绩最高的同学的姓名是:%s(%f分)\n", TempName[Max], TempScore[Max]);
+	printf("\n\t成绩最低的同学的姓名是:%s(%f分)\n", TempName[Min], TempScore[Min]);
 }

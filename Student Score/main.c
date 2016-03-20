@@ -47,10 +47,12 @@ void Memu(char TempName[N][NEXT], float TempScore[N],int Num)
 		Structural(TempName, TempScore,Num);
 		getch();
 		Memu(TempName,TempScore,Num);
+		break;
 	case 3 :
-		LinkedList(LinkedList_Initialize(TempName, TempScore,Num),Num);
+		LinkedList(LinkedList_Initialize(TempName, TempScore,Num));
 		getch();
 		Memu(TempName,TempScore,Num);
+		break;
 	case 4 :
 		break;
 	default:
