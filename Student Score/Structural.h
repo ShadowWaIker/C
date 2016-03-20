@@ -1,16 +1,16 @@
 #pragma once
 #include "string.h" /*尽量不在头文件中包含另外的头文件*/
 #define N 10
-#define NEXT 10 /*姓名长度(Name Extent)*/
+#define NEXT 10		/*姓名长度(Name Extent)*/
 
-typedef struct { /*学生信息结构*/
-	char  Name[NEXT];  /*学生姓名*/
-	float Score;	   /*学生成绩*/
+typedef struct {		/*学生信息结构*/
+	char  Name[NEXT];   /*学生姓名*/
+	float Score;	    /*学生成绩*/
 }STUDENTINFO;
 
 int Structural_Search_Max(STUDENTINFO TempStudent[], int Num) /*寻找成绩最高的学生并返回学生下标*/
 {
-	int i;/*计数器*/
+	int i;		 /*计数器*/
 	int Flag;
 	float Value; /*储存找到的数据*/
 	Value = TempStudent[0].Score;
@@ -26,7 +26,7 @@ int Structural_Search_Max(STUDENTINFO TempStudent[], int Num) /*寻找成绩最高的学
 
 int Structural_Search_Min(STUDENTINFO TempStudent[], int Num) /*寻找成绩最低的学生并返回学生下标*/
 {
-	int i;/*计数器*/
+	int i;		 /*计数器*/
 	int Flag;
 	float Value; /*储存找到的数据*/
 	Value = TempStudent[0].Score;

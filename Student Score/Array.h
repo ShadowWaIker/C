@@ -3,7 +3,7 @@
 
 int Array_Search_Max(float SearchScore[], int Num) /*Ñ°ÕÒ³É¼¨×î¸ßµÄÑ§Éú²¢·µ»ØÑ§ÉúÏÂ±ê*/
 {
-	int i;/*¼ÆÊıÆ÷*/
+	int i;		 /*¼ÆÊıÆ÷*/
 	int Flag;
 	float Value; /*´¢´æÕÒµ½µÄÊı¾İ*/
 	Value = SearchScore[0];
@@ -19,7 +19,7 @@ int Array_Search_Max(float SearchScore[], int Num) /*Ñ°ÕÒ³É¼¨×î¸ßµÄÑ§Éú²¢·µ»ØÑ§É
 
 int Array_Search_Min(float SearchScore[], int Num) /*Ñ°ÕÒ³É¼¨×îµÍµÄÑ§Éú²¢·µ»ØÑ§ÉúÏÂ±ê*/
 {
-	int i;/*¼ÆÊıÆ÷*/
+	int i;		 /*¼ÆÊıÆ÷*/
 	int Flag;
 	float Value; /*´¢´æÕÒµ½µÄÊı¾İ*/
 	Value = SearchScore[0];
