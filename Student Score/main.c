@@ -1,3 +1,7 @@
+/*Program Description*/
+/*1.输入数据(用两个数组保存)*/
+/*2.菜单(直接查询、转化为结构体查询、转化为链表查询、退出)*/
+
 #include "stdio.h"
 #include "windows.h"
 

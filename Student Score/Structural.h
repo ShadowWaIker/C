@@ -1,3 +1,4 @@
+/*初始化时将两个数组保存的数据转化为使用结构体数组保存*/
 #pragma once
 #include "string.h" /*尽量不在头文件中包含另外的头文件*/
 #define N 10

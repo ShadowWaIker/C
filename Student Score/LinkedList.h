@@ -1,3 +1,4 @@
+/*初始化时将两个数组保存的数据转化为使用链表保存*/
 #pragma once
 #define NEXT 10
 #include "stdlib.h"
