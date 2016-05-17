@@ -1,11 +1,7 @@
-//#define INPUT scanf_s  //VS环境中要修使用scanf_s函数
-#define INPUT scanf  //VC环境中要修使用scanf_s函数
-
 #include "stdio.h"
 #include "stdlib.h"
 #include "windows.h"
 #include "time.h"
-#include "conio.h"  //控制台输入输出，getch被包含在这个函数里
 
 typedef struct Node
 {
@@ -24,7 +20,7 @@ LinkList Createlist()/*创建链表*/
 
 	system("cls");  //清除屏幕上的内容
 	printf("\n\t 请输入要创建的结点个数:");
-	INPUT("%d", &ListLen);
+	scanf("%d", &ListLen);
 
 	NewNode = (Student*)malloc(sizeof(Student));/*分配存储空间*/
 	NewNode->NEXT = NULL;
@@ -44,8 +40,9 @@ LinkList Createlist()/*创建链表*/
 	}
 
 	system("cls");  //清除屏幕上的内容
-	printf("\n\t新建链表成功(按任意键继续).\n");
-	getch();
+	printf("\n\t新建链表成功.\n");
+	printf("\n\t");
+	system("pause");
 	system("cls");  //清除屏幕上的内容
 
 	return Head;
@@ -57,8 +54,9 @@ void Printlist(LinkList Head)/*打印链表*/
 	system("cls");  //清除屏幕上的内容
 	if (Head == NULL)
 	{
-		printf("\n\t 不存在链表，请新建链表(按任意键继续).");
-		getch();
+		printf("\n\t 不存在链表，请新建链表.");
+		printf("\n\t");
+		system("pause");
 		system("cls");  //清除屏幕上的内容
 		return ; //结束函数
 	}
@@ -69,8 +67,9 @@ void Printlist(LinkList Head)/*打印链表*/
 		printf("\tName:%c  Score:%d\n", Head->Name, Head->Score);
 		flag++;
 	}
-	printf("\t输出完成，共%d项(按任意键继续).", flag);
-	getch();
+	printf("\t输出完成，共%d项.", flag);
+	printf("\n\t");
+	system("pause");
 	system("cls");  //清除屏幕上的内容
 }
 
@@ -84,8 +83,9 @@ LinkList DeList(LinkList Head)/*删除链表*/
 	system("cls");  //清除屏幕上的内容
 	if (Head == NULL)
 	{
-		printf("\n\t 不存在链表，请新建链表(按任意键继续).");
-		getch();
+		printf("\n\t 不存在链表，请新建链表.");
+		printf("\n\t");
+		system("pause");
 		system("cls");  //清除屏幕上的内容
 		return 0; //结束函数
 	}
@@ -93,7 +93,7 @@ LinkList DeList(LinkList Head)/*删除链表*/
 	p = Head;				//初始化临时变量
 	p1 = Head->NEXT;
 	printf("\n\t 请输入要删除的结点序号:");
-	INPUT("%d", &Num);
+	scanf("%d", &Num);
 
 	for (i = 1;i<Num;i++)		//定位到第Num个节点
 	{
@@ -104,8 +104,9 @@ LinkList DeList(LinkList Head)/*删除链表*/
 	p->NEXT = p1->NEXT;		//删除节点
 	free(p1);				//释放空间
 
-	printf("\n\t 删除结点成功(按任意键继续).");
-	getch();
+	printf("\n\t 删除结点成功.");
+	printf("\n\t");
+	system("pause");
 	system("cls");  //清除屏幕上的内容
 	return Head;
 }
@@ -140,8 +141,9 @@ LinkList BubbleShortList_1(LinkList Head)  //排序算法(从小到大)
 
 		if (flag == 0) //如果flag为0那么表示没有发生替换
 		{
-			printf("\n\t排序完成(按任意键继续).");
-			getch();
+			printf("\n\t排序完成.");
+			printf("\n\t");
+			system("pause");
 			system("cls");  //清除屏幕上的内容
 			return Head; //排序完成，结束函数
 		}
@@ -165,10 +167,37 @@ LinkList BubbleShortList_1(LinkList Head)  //排序算法(从小到大)
 		}
 	}
 
-	printf("\n\t排序完成(按任意键继续).");
-	getch();
+	printf("\n\t排序完成.");
+	printf("\n\t");
+	system("pause");
 	system("cls");  //清除屏幕上的内容
 	return Head;
+}
+
+LinkList addList(LinkList infoList)
+{
+	LinkList newinfo;
+	system("cls");
+
+	newinfo = infoList;
+
+	while (newinfo->NEXT != NULL) //找到数据链表的尾部
+		newinfo = newinfo->NEXT;
+
+	newinfo->NEXT = (Student*)malloc(sizeof(Student));  //添加结点
+	newinfo = newinfo->NEXT;							//移动到新结点
+
+	newinfo->Name = 'a' + rand() % 25;//添加数据
+	newinfo->Score = rand() % 100;
+	newinfo->NEXT = NULL;
+
+	system("cls");
+	printf("\n\t");
+	printf("添加完成.");
+	printf("\n\t");
+	system("pause");
+	system("cls");
+	return infoList;
 }
 
 int menu()
@@ -178,20 +207,19 @@ int menu()
 	{
 		printf("\n");
 		printf("\t ========= 菜单 =========\n\n");
-		printf("\t新建链表 …………………… 1\n\n");//未完成
+		printf("\t新建链表 …………………… 1\n\n");
 		printf("\t显示链表 …………………… 2\n\n");
-		printf("\t添加链表 …………………… 3\n\n");//未完成
+		printf("\t添加链表 …………………… 3\n\n");
 		printf("\t删除链表 …………………… 4\n\n");
-		printf("\t排序链表(替换数据) ……… 5\n\n");
-		printf("\t排序链表(替换结点) ……… 6\n\n");//未完成
-		printf("\t退出程序 …………………… 7\n\n");
+		printf("\t排序链表 …………………… 5\n\n");
+		printf("\t退出程序 …………………… 0\n\n");
 		printf("\t选择:");
-		INPUT("%d", &flag); //新版安全函数
+		scanf("%d", &flag); 
 		if (flag<0 || flag>7)
 		{
 			system("cls");  //清除屏幕上的内容
-			printf("\n\t 请选择正确的操作(按任意键继续).\n\n");
-			getch();
+			printf("\n\t 请选择正确的操作.\n\n");
+			system("pause");
 			system("cls");  //清除屏幕上的内容
 		}
 	} while (flag<0 || flag>7); //不是菜单中的选项重新显示菜单
@@ -218,7 +246,7 @@ int main(void)
 			Printlist(Head);
 			break;
 		case 3:
-			//Head = Addlist(Head);
+			Head = addList(Head);
 			break;
 		case 4:
 			Head = DeList(Head);
@@ -226,10 +254,8 @@ int main(void)
 		case 5:
 			Head = BubbleShortList_1(Head);
 			break;
-		case 6:
-			//
-			break;
-		case 7: return 0; //主函数中使用 return 可以退出程序, exit(0) 可以在任何地方退出程序
+		case 0: 
+			return 0; //主函数中使用 return 可以退出程序, exit(0) 可以在任何地方退出程序
 		}
 	}
 }
